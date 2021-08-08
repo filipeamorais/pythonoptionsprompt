@@ -8,3 +8,11 @@ Your selection: """
 Welcome = "Welcome to the programming diary!"
 
 print (Welcome)
+
+while (user_input := input(menu)) != "3":
+    if user_input == "1":
+        print("Adding...")
+    elif user_input == "2":
+        print("Viewing...")
+    else:
+        print("Invalid option, please try again!")
