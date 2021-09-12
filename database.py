@@ -5,13 +5,17 @@ connection = sqlite3.connect("data.db")
 
 def create_table():
     with connection:
-        connection.execute("CREATE TABLE entries (content TEXT,date TEXT )")
+        connection.execute(
+            "CREATE TABLE entries (content TEXT,date TEXT );"
+            )
 
 def add_entry (entry_content, entry_date):
     with connection:
-        connection.execute("INSERT INTO entries VALUES ('Rolf','Smith')")
+        connection.execute(
+            "INSERT INTO entries VALUES (?,?);",(entry_content, entry_date)
+            )
 
 def get_entries():
     with connection:
-        connection.execute("SELECT * FROM entries")
+        connection.execute("SELECT * FROM entries;")
     
