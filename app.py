@@ -1,4 +1,4 @@
-from database import add_entry, view_entries
+from database import add_entry, get_entries, create_table
 
 menu = """Please select:
 1) Add new entry for today
@@ -9,7 +9,7 @@ Your selection: """
 
 Welcome = "Welcome to the programming diary!"
 
-def promt_new_entry():
+def prompt_new_entry():
     entry_content = input("What have you learned today?  ")
     entry_date = input ("Enter the date: ")
 
@@ -21,10 +21,12 @@ def view_entries (entries):
 
 print (Welcome)
 
+create_table()
+
 while (user_input := input(menu)) != "3":
     if user_input == "1":
         prompt_new_entry()
     elif user_input == "2":
-        view_entries(get_entries())
+        get_entries()
     else:
         print("Invalid option, please try again!")  

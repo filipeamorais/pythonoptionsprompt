@@ -12,4 +12,6 @@ def add_entry (entry_content, entry_date):
         connection.execute("INSERT INTO entries VALUES ('Rolf','Smith')")
 
 def get_entries():
-    return entries
+    with connection:
+        connection.execute("SELECT * FROM entries")
+    
